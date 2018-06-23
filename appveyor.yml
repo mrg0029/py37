@@ -10,6 +10,9 @@ install:
     - cmd: call C:\Miniconda36\Scripts\activate.bat
     - cmd: conda update --quiet --yes conda
     - cmd: set PYTHONUNBUFFERED=1
+    - cmd: conda config --set show_channel_urls true
+    - cmd: conda config --remove channels defaults
+    - cmd: conda config --add channels defaults
     - cmd: conda config --add channels conda-forge
     - cmd: conda install -n root --quiet --yes conda-forge-build-setup
     - cmd: run_conda_forge_build_setup
