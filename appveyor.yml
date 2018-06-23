@@ -1,0 +1,20 @@
+environment:
+  - TARGET_ARCH: x86
+    CONDA_PY: 36
+
+platform:
+    - x64
+
+install:
+    - cmd: rmdir C:\cygwin /s /q
+    - cmd: call C:\Miniconda36\Scripts\activate.bat
+    - cmd: conda update --quiet --yes conda
+    - cmd: set PYTHONUNBUFFERED=1
+    - cmd: conda config --add channels conda-forge
+    - cmd: conda install -n root --quiet --yes conda-forge-build-setup
+    - cmd: run_conda_forge_build_setup
+
+build: off  # skip .NET project specific build phase
+
+test_script:
+    - conda build recipe --quiet
