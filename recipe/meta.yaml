@@ -14,8 +14,7 @@ package:
 
 source:
   - url: https://www.python.org/ftp/python/{{ base_version }}/Python-{{ version }}rc1.tar.xz
-  # - url: https://www.python.org/ftp/python/{{ base_version }}/Python-{{ version }}.tgz
-    md5: {{ md5 }}
+    md5: de8b44e3c94d0144768e923b6ab87c53
     patches:
       - 0001-Add-Anaconda-Distribution-version-logic.patch
       - 0002-Darwin-Add-arch-x86_64-to-UnicCCompiler-ld_args.patch
